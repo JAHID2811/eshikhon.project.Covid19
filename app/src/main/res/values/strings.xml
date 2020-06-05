@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Covid-19</string>
+    <string name="bottom_menu_home">Home</string>
+    <string name="bottom_menu_stats">Stats</string>
+    <string name="bottom_menu_emergency">Emergency</string>
+    <string name="bottom_menu_info">Info</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="corona_hospital">Corona\nHospital</string>
+    <string name="emergency_helpline">Emergency\nHelpline</string>
+    <string name="health_tips">Health\nTips</string>
+    <string name="corona_test">Corona\nTest</string>
+    <string name="total_cases_per_1m_population">Infected Per 1M Population</string>
+    <string name="deaths_per_1m_population">Deaths Per 1M Population</string>
+    <string name="new_infected">New Infected</string>
+    <string name="total_infected">Total Infected</string>
+    <string name="new_death">New Death</string>
+    <string name="total_death">Total Death</string>
+    <string name="total_recover">Total Recover</string>
+    <string name="serious_critical">Serious Critical</string>
+    <string name="global_cases">Global</string>
+    <string name="view_all_country">View All Country</string>
+    <string name="total_tests_per_1m">Total Tests Per 1M</string>
+    <string name="last_update">Last Update:</string>
+    <string name="total_tests">Total Tests</string>
+</resources>
