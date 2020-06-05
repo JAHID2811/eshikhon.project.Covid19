@@ -1,10 +1,14 @@
 package com.eshikhon.project.covid19.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -24,6 +28,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import timber.log.Timber;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,9 +70,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_country_name)
     TextView tvCountryName;
 
-    @BindView(R.id.tv_status_last_update_by_country)
-    TextView tvStatusLastUpdateByCountry;
-
     @BindView(R.id.tv_total_infected_by_country)
     TextView tvTotalInfectedByCountry;
 
@@ -94,12 +97,16 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_view_all_country)
     TextView tvViewAllCountry;
 
+    @BindView(R.id.tv_about_me)
+    TextView tvAboutMe;
+
     private WorldStatViewModel worldStatViewModel;
     private SharedHelper sharedHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
@@ -127,6 +134,14 @@ public class MainActivity extends AppCompatActivity {
 
             worldStatViewModel.getStateByCountryLiveData("Bangladesh").observe(this, this::setStateByCountryData);
         });
+
+        tvAboutMe.setOnClickListener ( new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText ( MainActivity.this, "About the developer..." , LENGTH_SHORT ).show ();
+                startActivity ( new Intent ( MainActivity.this,AboutActivity.class ) );
+            }
+        } );
 
 
     }
@@ -160,10 +175,9 @@ public class MainActivity extends AppCompatActivity {
 
         tvCountryName.setText(countryName);
         tvTotalDeathByCountry.setText(totalDeaths);
-        tvNewDeathByCountry.setText("(+" + newDeaths + ")");
+        tvNewDeathByCountry.setText(newDeaths);
         tvTotalInfectedByCountry.setText(totalInfected);
-        tvNewInfectedByCountry.setText("(+" + newInfected + ")");
-        tvStatusLastUpdateByCountry.setText(lastUpdate);
+        tvNewInfectedByCountry.setText(newInfected);
         tvTotalRecoveredByCountry.setText(totalRecovered);
         tvSeriousCriticalByCountry.setText(seriousCritical);
         tvDeathPer1mByCountry.setText(deathsPer1mPopulation);
@@ -182,13 +196,42 @@ public class MainActivity extends AppCompatActivity {
         String totalCasesPer1mPopulation = worldStateResponse.getTotalCasesPer1mPopulation();
 
         tvTotalDeath.setText(totalDeaths);
-        tvNewDeath.setText("(+" + newDeaths + ")");
+        tvNewDeath.setText(newDeaths);
         tvTotalInfected.setText(totalInfected);
-        tvNewInfected.setText("(+" + newInfected + ")");
+        tvNewInfected.setText(newInfected);
         tvStatusLastUpdate.setText(lastUpdate);
         tvTotalRecovered.setText(totalRecovered);
         tvSeriousCritical.setText(seriousCritical);
         tvDeathPer1m.setText(deathsPer1mPopulation);
         tvInfectedPer1m.setText(totalCasesPer1mPopulation);
     }
+
+
+    ////onBackPressed AlertDialog
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon( R.drawable.ic_covid_19 )
+                .setTitle( R.string.app_name )
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //finish();
+                        MainActivity.this.onSuperBackPressed();
+                        //super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+    public void onSuperBackPressed(){
+        super.onBackPressed();
+    }
+
 }

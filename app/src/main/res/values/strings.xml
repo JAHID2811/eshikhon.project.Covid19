@@ -24,4 +24,5 @@
     <string name="total_tests_per_1m">Total Tests Per 1M</string>
     <string name="last_update">Last Update:</string>
     <string name="total_tests">Total Tests</string>
+    <string name="about">About</string>
 </resources>
