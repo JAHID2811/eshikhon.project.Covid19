@@ -2,7 +2,6 @@ package com.eshikhon.project.covid19.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -62,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.root)
     RelativeLayout root;
 
-    /*@BindView(R.id.tv_country_cases)
-    TextView tvCountryCases;*/
-
     @BindView(R.id.tv_country_name)
     TextView tvCountryName;
 
@@ -95,9 +91,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_infected_per_1m_by_country)
     TextView tvInfectedPer1mByCountry;
 
-//    @BindView(R.id.iv_select_country)
-    ImageView ivSelectCountry;
-
     @BindView(R.id.tv_view_all_country)
     TextView tvViewAllCountry;
 
@@ -113,11 +106,6 @@ public class MainActivity extends AppCompatActivity {
         sharedHelper = new SharedHelper(this);
 
         worldStatViewModel = ViewModelProviders.of(this).get(WorldStatViewModel.class);
-
-        /*worldStatViewModel.getCountryLiveData().observe(this, countryResponses -> {
-            getCountryData(countryResponses);
-            swipeRefreshHome.setRefreshing(false);
-        });*/
 
         SharedHelper.writeKey(AppConstant.KEY_COUNTRY_NAME, "Bangladesh");
 
@@ -143,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    @OnClick(R.id.iv_select_country)
     public void selectCountry() {
 
     }

@@ -1,7 +1,7 @@
 package com.eshikhon.project.covid19.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.samad_talukder.covid_19.utils.NullRemoveUtil;
+import com.eshikhon.project.covid19.utils.NullRemoveUtil;
 
 import java.util.List;
 

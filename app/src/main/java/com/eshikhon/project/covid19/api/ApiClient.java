@@ -2,7 +2,6 @@ package com.eshikhon.project.covid19.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-//import com.eshikhon.project.covid19.BuildConfig;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -13,12 +12,9 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-
-//import com.itkacher.okhttpprofiler.OkHttpProfilerInterceptor;
 
 public class ApiClient implements URLConstant {
     private static Retrofit retrofit = null;
@@ -64,11 +60,6 @@ public class ApiClient implements URLConstant {
                 return chain.proceed(request);
             }
         });
-
-//        if (BuildConfig.DEBUG) {
-//            builder.addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY));
-////            builder.addInterceptor(new OkHttpProfilerInterceptor());
-//        }
 
         return builder.build();
     }

@@ -71,23 +71,6 @@ public class AllCountriesActivity extends AppCompatActivity {
         });
     }
 
-    /*private void searchCountry(String str) {
-        Timber.e("SearchText: "+str);
-        ArrayList<CountriesStat> countriesStatArrayList = new ArrayList<>();
-
-        for (CountriesStat countriesStat : countriesStatArrayList) {
-            Timber.e("loop: "+countriesStat.getCountryName());
-            if (countriesStat.getCountryName().toLowerCase().contains(str.toLowerCase())) {
-                Timber.e("getCountryName: "+countriesStat.getCountryName());
-                countriesStatArrayList.add(countriesStat);
-            }
-        }
-
-        rvAllCountries.removeAllViews();
-        adapterAllCountriesState.searchCountryList(countriesStatArrayList);
-    }*/
-
-
     private void setCountryData(CountriesStatResponse countriesStatResponse) {
         ArrayList<CountriesStat> countriesStatArrayList = (ArrayList<CountriesStat>) countriesStatResponse.getCountriesStat();
         adapterAllCountriesState = new AdapterAllCountriesState(this);

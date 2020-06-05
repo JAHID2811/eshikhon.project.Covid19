@@ -1,7 +1,7 @@
 package com.eshikhon.project.covid19.utils;
 
 
-import com.samad_talukder.covid_19.BuildConfig;
+import com.eshikhon.project.covid19.BuildConfig;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
