@@ -38,27 +38,6 @@
         android:layout_marginBottom="20dp"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contact number: +8801784263063"
-        android:textSize="15dp"
-        android:textColor="#000"
-        android:textStyle="italic"
-        android:layout_marginBottom="5dp"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="mail"
-        android:text="Email: jahid2811official@gmail.com"
-        android:textSize="15dp"
-        android:textColor="#000"
-        android:textStyle="italic"
-        android:layout_marginBottom="20dp"
-        />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,10 +47,66 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/website"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:onClick="website"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phonecall"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:onClick="phonecall"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/messenger"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:onClick="messenger"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/whatsapp"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:onClick="whatsapp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mail"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:onClick="mail"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/github"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:onClick="github"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/facebook"
             android:background="#fff"
             android:layout_margin="5dp"
             android:onClick="facebook"/>
+
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -89,13 +124,6 @@
             android:layout_margin="5dp"
             android:onClick="twitter"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/whatsapp"
-            android:background="#fff"
-            android:layout_margin="5dp"
-            android:onClick="whatsapp"/>
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -105,13 +133,6 @@
             android:layout_margin="5dp"
             android:onClick="linkedin"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/github"
-            android:background="#fff"
-            android:layout_margin="5dp"
-            android:onClick="github"/>
 
     </LinearLayout>
 
