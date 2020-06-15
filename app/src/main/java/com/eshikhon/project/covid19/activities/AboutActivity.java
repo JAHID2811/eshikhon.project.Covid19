@@ -14,6 +14,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Covid-19 is developed by JIS");
         setContentView(R.layout.activity_about);
     }
 
