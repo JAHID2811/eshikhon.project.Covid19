@@ -31,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     public void messenger(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.me/JISprofile"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.me/jahidofficialprofile"));
         startActivity(intent);
     }
 
@@ -51,12 +51,12 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     public void facebook(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/JISprofile"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/jahidofficialprofile"));
         startActivity(intent);
     }
 
     public void instgram(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/JAHID.profile"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/jahidofficialprofile"));
         startActivity(intent);
     }
 
